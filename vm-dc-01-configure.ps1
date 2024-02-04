@@ -29,3 +29,6 @@ New-ADGroup -Name "CitrixUsers" -Path "OU=Groups,OU=Resources,DC=shilllabs,DC=cl
 
 #Add Users To Groups
 Add-ADGroupMember -Identity "Domain Admins" -Members "Shane_ADM"
+
+#set the default computer OU
+redircmp "OU=Resources,DC=shilllabs,DC=cloud"

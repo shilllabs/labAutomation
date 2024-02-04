@@ -36,4 +36,10 @@ Add-ADGroupMember -Identity "Domain Admins" -Members "Shane_ADM"
 
 #set the default computer OU
 redircmp "OU=Resources,DC=shilllabs,DC=cloud"
+
+#clean up autologon
+Set-ItemProperty "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name 'DefaultUserName'
+Set-ItemProperty "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name 'DefaultPassword'
+Set-ItemProperty "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name 'AutoAdminLogon'
+
 Stop-Transcript

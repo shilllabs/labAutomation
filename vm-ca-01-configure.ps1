@@ -29,4 +29,10 @@ Install-WindowsFeature Adcs-Cert-Authority -IncludeManagementTools
 
 #install ca role
 Install-AdcsCertificationAuthority @params -Credential $credentialObject -Force
+
+#clean up autologon
+Remove-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name 'DefaultUserName'
+Remove-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name 'DefaultPassword'
+Remove-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name 'AutoAdminLogon'
+
 Stop-Transcript

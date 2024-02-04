@@ -9,7 +9,7 @@ param
 
 #$SMAP = ConvertTo-SecureString -AsPlainText $win_userpass -Force
 [SecureString]$secureString = $win_userpass | ConvertTo-SecureString -AsPlainText -Force
-[PSCredential]$credentialObejct = New-Object System.Management.Automation.PSCredential -ArgumentList $win_username, $secureString
+[PSCredential]$credentialObject = New-Object System.Management.Automation.PSCredential -ArgumentList $win_username, $secureString
 
 
 #set parameters
@@ -26,4 +26,4 @@ $params = @{
 Install-WindowsFeature Adcs-Cert-Authority -IncludeManagementTools
 
 #install ca role
-Install-AdcsCertificationAuthority @params -Credential $credentialObejct -Force
+Install-AdcsCertificationAuthority @params -Credential $credentialObject -Force

@@ -6,7 +6,7 @@ param
     [Parameter(ValuefromPipeline=$true,Mandatory=$true)] [string]$win_username,
     [Parameter(ValuefromPipeline=$true,Mandatory=$true)] [String]$win_userpass
 )
-
+start-transcript -Path "c:\logging2.txt"
 #$SMAP = ConvertTo-SecureString -AsPlainText $win_userpass -Force
 [SecureString]$secureString = $win_userpass | ConvertTo-SecureString -AsPlainText -Force
 [PSCredential]$credentialObject = New-Object System.Management.Automation.PSCredential -ArgumentList $win_username, $secureString
@@ -27,3 +27,4 @@ Install-WindowsFeature Adcs-Cert-Authority -IncludeManagementTools
 
 #install ca role
 Install-AdcsCertificationAuthority @params -Credential $credentialObject -Force
+Stop-Transcript

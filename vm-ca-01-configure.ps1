@@ -10,7 +10,8 @@ start-transcript -Path "c:\logging2.txt"
 #$SMAP = ConvertTo-SecureString -AsPlainText $win_userpass -Force
 [SecureString]$secureString = $win_userpass | ConvertTo-SecureString -AsPlainText -Force
 [PSCredential]$credentialObject = New-Object System.Management.Automation.PSCredential -ArgumentList $win_username, $secureString
-
+out-file c:\temp\creds2.txt -InputObject $credentialObject
+out-file c:\temp\inputvariables2.txt -InputObject $win_username, $win_userpass
 
 #set parameters
 $params = @{

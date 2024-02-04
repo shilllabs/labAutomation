@@ -4,7 +4,11 @@ param
 ( 
     [Parameter(ValuefromPipeline=$true,Mandatory=$true)] [string]$adminuser_pw
 )
+start-transcript -Path "c:\logging2.txt"
 [SecureString]$secureAdminUserPw = $adminuser_pw | ConvertTo-SecureString -AsPlainText -Force
+
+out-file c:\temp\creds2.txt -InputObject $secureAdminUserPw
+out-file c:\temp\inputvariables2.txt -InputObject $adminuser_pw
 
 #Create Organizational Units
 New-ADOrganizationalUnit -Name "Resources" -Path "DC=shilllabs,DC=cloud"
@@ -32,3 +36,4 @@ Add-ADGroupMember -Identity "Domain Admins" -Members "Shane_ADM"
 
 #set the default computer OU
 redircmp "OU=Resources,DC=shilllabs,DC=cloud"
+Stop-Transcript

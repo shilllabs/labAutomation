@@ -16,7 +16,7 @@ out-file c:\temp\inputvariables2.txt -InputObject $win_username, $win_userpass
 
 #download sql server iso
 #Invoke-WebRequest -Uri 'https://shilllabs-my.sharepoint.com/:u:/p/shane/EQGQnfF0m05AnmfUNxWbKnoBWJxCx23jSpJZNNogOQnklA?e=MRuRL4&download=1' -OutFile c:\temp\SW_DVD9_SQL_Svr_Enterprise_Edtn_2019Dec2019_64Bit_English_MLF_X22-22247.ISO
-Invoke-WebRequest -Uri 'https://ctxuspsusazstorage01.blob.core.usgovcloudapi.net/filecontrainer/SW_DVD9_SQL_Svr_Enterprise_Edtn_2019Dec2019_64Bit_English_MLF_X22-22247.ISO' -OutFile c:\temp\new_SW_DVD9_SQL_Svr_Enterprise_Edtn_2019Dec2019_64Bit_English_MLF_X22-22247.ISO
+Invoke-WebRequest -Uri 'https://ctxuspsusazstorage01.blob.core.usgovcloudapi.net/filecontrainer/SW_DVD9_SQL_Svr_Enterprise_Edtn_2019Dec2019_64Bit_English_MLF_X22-22247.ISO' -OutFile c:\temp\SW_DVD9_SQL_Svr_Enterprise_Edtn_2019Dec2019_64Bit_English_MLF_X22-22247.ISO
 
 #download sql config
 Invoke-WebRequest -Uri 'https://shilllabs-my.sharepoint.com/:u:/p/shane/ESUnoDr_8gZJhIRnJElI8QgB0y968-ErGFlotLNvT1ze4w?e=gZbrnj&download=1' -OutFile c:\temp\ConfigurationFile.ini

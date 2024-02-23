@@ -14,6 +14,16 @@ start-transcript -Path "c:\logging2.txt"
 out-file c:\temp\creds2.txt -InputObject $credentialObject
 out-file c:\temp\inputvariables2.txt -InputObject $win_username, $win_userpass
 
+#download storefront
+Invoke-WebRequest -Uri 'https://shilllabs-my.sharepoint.com/:u:/p/shane/EeGae6pjRm1FimrdcjN-BuYBtHuN2ikCDva9z3QAwqBalw?e=jRdXyZ&download=1' -OutFile c:\temp\CitrixStoreFront-x64.exe
+
+#install storefront
+c:\temp\CitrixStoreFront-x64.exe -silent
+
+
+#probably reboot after this
+#Import-Module Citrix.StoreFront
+#powershell -ExecutionPolicy Unrestricted -File 'C:\Program Files\Citrix\Receiver StoreFront\PowerShellSDK\Examples\SimpleDeployment.ps1' -HostbaseUrl "http://sf-01.shilllabs.cloud" -SiteId 1 -Farmtype XenDesktop -FarmServers "cc-01.shilllabs.cloud" -StoreVirtualPath "/Citrix/Store"
 
 #clean up autologon
 Remove-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name 'DefaultUserName'

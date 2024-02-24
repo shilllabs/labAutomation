@@ -24,6 +24,8 @@ c:\temp\CitrixStoreFront-x64.exe -silent
 #configure storefront
 #c:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Unrestricted -File 'C:\Program Files\Citrix\Receiver StoreFront\PowerShellSDK\Examples\SimpleDeployment.ps1' -HostbaseUrl "https://sf-01.shilllabs.cloud" -SiteId 1 -Farmtype XenDesktop -FarmServers "cc-01.shilllabs.cloud" -StoreVirtualPath "/Citrix/Store"
 #this command worked when run manualy. look to split out sf configs in a separate tf to be run independantly
+#also need to request a certificate and the bind it to iis
+#reseach the code to automate the gateway remote access and config for storefront too
 
 
 #clean up autologon

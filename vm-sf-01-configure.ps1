@@ -19,7 +19,7 @@ Invoke-WebRequest -Uri 'https://shilllabs-my.sharepoint.com/:u:/p/shane/EeGae6pj
 
 #install storefront
 c:\temp\CitrixStoreFront-x64.exe -silent
-
+#download and install took about minutes to complete
 
 #configure storefront
 #c:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Unrestricted -File 'C:\Program Files\Citrix\Receiver StoreFront\PowerShellSDK\Examples\SimpleDeployment.ps1' -HostbaseUrl "https://sf-01.shilllabs.cloud" -SiteId 1 -Farmtype XenDesktop -FarmServers "cc-01.shilllabs.cloud" -StoreVirtualPath "/Citrix/Store"
